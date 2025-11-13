@@ -110,12 +110,12 @@ int main() {
 					break;
 
 			case 4:
-					selectionsort(ifilename);
+					selectionsort(ifilename, sz);
 					cout << ofilename << endl;
 					break;
 
 			case 7:
-					shellsort(ifilename);
+					shellsort(ifilename, sz);
 					cout << ofilename << endl;
 					break;
 			// Write the other cases 4 - 7 here		

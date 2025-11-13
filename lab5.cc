@@ -11,9 +11,7 @@
 
 #include <iostream>
 #include <ctime>
-#include "myheaders.h"
-#include "selection.h"
-#include "shell.h"
+#include "myheader.h"
 
 using namespace std;
 
@@ -207,7 +205,6 @@ int main() {
 					else cout << endl << "Output written to " << ofilename << endl;
 			
 					break;
-			// Write the other cases 4 - 7 here		
 			
 			case 0: // Exit Program
 
@@ -225,4 +222,3 @@ int main() {
 	
 	return 0;
 }
-

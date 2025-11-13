@@ -12,6 +12,8 @@
 #include <iostream>
 #include <ctime>
 #include "myheaders.h"
+#include "selection.h"
+#include "shell.h"
 
 using namespace std;
 
@@ -106,7 +108,16 @@ int main() {
 					else cout << endl << "Output written to " << ofilename << endl;
 			
 					break;
-					
+
+			case 4:
+					selectionsort(ifilename);
+					cout << ofilename << endl;
+					break;
+
+			case 7:
+					shellsort(ifilename);
+					cout << ofilename << endl;
+					break;
 			// Write the other cases 4 - 7 here		
 			
 			case 0: // Exit Program

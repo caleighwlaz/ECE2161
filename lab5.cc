@@ -51,13 +51,15 @@ int main() {
 			case 2: // Sort function A
 
                     // First, copy the contents of the array 'data' to the working array 'wData'. Your program should sort 'wData' and not 'data'.
-                    
+                    for (int i = 0; i < sz; ++i) {
+                    	data[i] = wData[i];
+                    }
                     
 					begin_time = clock();   // start cpu timer
 			
 					// Call your Sort function A here to sort the array 'wData''
 			        //  Note that 'wData' is of size 'sz' (see case 1).
-
+					combsort(wData[], sz);
 
 			
 					end_time = clock();		// end cpu timer
@@ -108,6 +110,37 @@ int main() {
 				
 					selectionsort(ifilename, sz);
 
+					end_time = clock();		// end cpu timer
+
+					cpu_time_used = (end_time - begin_time) / CLOCKS_PER_SEC;
+					cout << endl << "(A)Sort ran for " << cpu_time_used << " secs.";
+			
+					ofilename = "lab5_D_out.txt";
+					writefile(wData, sz, ofilename);
+					
+					if (sz < 0)	 {
+						 cerr << endl << "ERROR: Output File could not be opened." <<endl;
+						 cerr << "       Quitting Now!" << endl << endl;
+						 return 0;
+					}
+					else cout << endl << "Output written to " << ofilename << endl;
+			
+					break;
+			
+			case 5: // Sort function D
+
+                    // First, copy the contents of the array 'data' to the working array 'wData'. Your program should sort 'wData' and not 'data'.
+                    for (int i = 0; i < sz; ++i) {
+                    	data[i] = wData[i];
+                    }
+                    
+					begin_time = clock();   // start cpu timer
+			
+					// Call your Sort function D here to sort the array 'wData''
+			        //  Note that 'wData' is of size 'sz' (see case 1).
+					mergesort(wData[], 0, sz-1);
+
+			
 					end_time = clock();		// end cpu timer
 
 					cpu_time_used = (end_time - begin_time) / CLOCKS_PER_SEC;

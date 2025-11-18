@@ -17,21 +17,53 @@ void mergesort(long data[], long first, long last) {
 	return;
 }
 void merge(long array[], long first, long last) {
-	long mid, i1, i2, i3;
-	long tmp[last-first+1];
+	long mid, i1, i2;
 
 	mid = (first + last)/2;
-	i1 = 0;
-	i2 = first;
-	i3 = mid + 1;
+	i1 = first;
+	i2 = mid + 1;
 
-	while ((i2 <= mid) && (i3 <= last)) {
-		if (array[i2] < array[i3]) tmp[i1++] = array[i2++];
-		else tmp[i1++] = array[i3++];
+	int k = first;
+
+	int n1 = i2 - i1;
+	int n2 = last - mid;
+
+
+
+	long head[n1];
+	long tail[n2];
+
+	for (int i = 0; i < n1; i++) {
+		head[i] = array[first + i];
 	}
-	while (i2 <= mid) tmp[i1++] = array[i3++];
+	for (int j = 0; j < n2; j++) {
+		tail[j] = array[mid + 1 + j];
+	}
 
-	for (i1 = 0; i1 < (last-first+1); ++i1) array[first+i1] = tmp[i1];
+	int i = 0;
+	int j = 0;
+
+	while (i < n1 && j < n2) {
+		if (head[i] <= tail[j]) {
+			array[k] = head[i];
+			i++;
+		}
+		else {
+			array[k] = tail[j];
+			j++;
+		}
+		k++;
+	}
+	while (i < n1) {
+		array[k] = head[i];
+		i++;
+		k++;
+	}
+	while (j < n2) {
+			array[k] = tail[j];
+			j++;
+			k++;
+		}
 
 	return;
 }

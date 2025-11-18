@@ -1,3 +1,11 @@
+/*
+ * quicksort.cpp
+ *
+ *  Created on: Nov 18, 2025
+ *      Author: ece-lab-206
+ */
+
+#include "myheader.h"
 
 void quickSort(long data[], long left, long right) {
     if (left >= right)

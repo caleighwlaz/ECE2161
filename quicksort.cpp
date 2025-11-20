@@ -8,17 +8,14 @@ void quickSort(long data[], long left, long right) {
     if (left >= right) //base case
         return;
 
-    //pivot is the middle element
-    long bound = data[(left + right) / 2];
+    long bound = data[(left + right) / 2]; //pivot is the middle element
 
     long i = left, j = right;
     while (i <= j) {
-        //move i forwards until a number greater than i is found
-        while (data[i] < bound) i++;
-        //move j backwards until a number less than j is found
-        while (data[j] > bound) j--;
+        while (data[i] < bound) i++; //move i forwards until a number greater than i is found
+        while (data[j] > bound) j--; //move j backwards until a number less than j is found
 
-        if (i <= j) {
+        if (i <= j) { // if i and j dont cross, swap them and keep going
             swap(data[i], data[j]);
             i++;
             j--;

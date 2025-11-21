@@ -20,6 +20,7 @@ void	printmenu() {
 			cout << "  7: Sort using shellsort" << endl;
 			cout << "  0: Exit program" << endl;
 			cout << endl << "Enter your choice: ";
+			//prints out options for user to pick, to read the file and which sorting algorithm to use
 
 		return;
 
@@ -31,6 +32,7 @@ void	printarray(long data[], long size) {
 			cout << endl;
 
 		return;
+	//prints all elements of the array to double check that the sorting algorithms are properly working
 
 }
 int		readfile(string infilename, long d[]) {
@@ -49,13 +51,14 @@ int		readfile(string infilename, long d[]) {
 			else {
 				for (i = 0; (!infile.eof()) && (i < MAXSIZE); ++i) {
 					infile >> d[i];
-				} // for
+				} 
 
 				size = i-1; // eof() causes an extra (invalid) number to be read
 				infile.close();
-			} // else
+			} 
 
 			return size;
+			//reads data set as an input file
 }
 
 int		writefile(long data[], long size, string outfilename) {
@@ -75,9 +78,10 @@ int		writefile(long data[], long size, string outfilename) {
 
 				errcode = 0;
 				outfile.close();
-			} // else
+			}
 
 			return errcode;
+			//writes output, sorted data to an output file
 }
 
 void	swap(long& x, long& y) {
@@ -89,4 +93,5 @@ void	swap(long& x, long& y) {
 			y = tmp;
 
 			return;
+			//swaps two variable values
 }

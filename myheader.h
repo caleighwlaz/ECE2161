@@ -1,3 +1,7 @@
+// Jordan Barile, Julianna Petrelli, Caleigh Wlazlowski
+// Lab 5, ECE 2161-001
+// This file declares all functions used in Lab 5.
+
 #include <string>
 #include <unistd.h>
 

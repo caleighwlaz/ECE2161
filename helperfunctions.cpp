@@ -1,4 +1,6 @@
-// DO NOT forget to add the prototypes for your ASort, BSort, and other functions below!
+// Jordan Barile, Julianna Petrelli, Caleigh Wlazlowski
+// Lab 5, ECE 2161-001
+// This file has functions to print out menu options, print the data array, read the file, write the file, and swap two variable values
 
 #include <iostream>
 #include <fstream>

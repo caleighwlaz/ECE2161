@@ -1,9 +1,7 @@
-/*
- * selectionsort.cpp
- *
- *  Created on: Nov 18, 2025
- *      Author: ece-lab-206
- */
+// Caleigh Wlazlowski
+// ECE 2161-001
+// This program uses Selection Sort to sort a dataset.
+
 #include "myheader.h"
 
 void swap_sel(long &a, long &b) {
@@ -13,12 +11,12 @@ void swap_sel(long &a, long &b) {
 }
 void selectionsort(long data[], int n) {
 	for(int i = 0, j, least; i < n-1; i++) {
-		for(j = i+1, least = i; j < n; j++) {
-			if(data[j] < data[least]) {
-				least = j;
+		for(j = i+1, least = i; j < n; j++) {		//gets two values from dataset
+			if(data[j] < data[least]) {				//compares which of the two variables is smaller
+				least = j;							//replaces the smaller value
 			}
 		}
-		swap_sel(data[least], data[i]);
+		swap_sel(data[least], data[i]);				//swaps least value into the output dataset
 	}
 }
 

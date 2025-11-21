@@ -1,9 +1,6 @@
-/*
- * shellsort.cpp
- *
- *  Created on: Nov 18, 2025
- *      Author: ece-lab-206
- */
+// Caleigh Wlazlowski
+// ECE 2161-001
+// This program uses Shelll Sort to sort a dataset.
 
 void shellsort(long data[], int n) {
 	int i, j, h_count, h;
@@ -18,7 +15,7 @@ void shellsort(long data[], int n) {
 		h = increments[i];
 		//loop on the number of subarrays h-sorted in ith pass
 		for(h_count = h; h_count < 2*h; h_count++) {
-			//insertionm sort for subarray containing every hth element
+			//insertion sort for subarray containing every hth element and replace which values are smaller
 			for(j = h_count; j < n; ) {
 				long tmp = data[j];
 				k = j;
@@ -27,7 +24,7 @@ void shellsort(long data[], int n) {
 					k -= h;
 				}
 				data[k] = tmp;
-				j += h;
+				j += h;				//returns sorted dataset and moves to next index
 			}
 		}
 	}

@@ -11,7 +11,7 @@
 
 #include <iostream>
 #include <ctime>
-#include "myheader.h"
+#include "myheader.h" //connects sorting functions to main code
 
 using namespace std;
 
@@ -19,14 +19,14 @@ using namespace std;
 int main() {
 
 	int		choice, sz;
-	long	data[MAXSIZE], wData[MAXSIZE];
-	double  begin_time, end_time, cpu_time_used;
+	long	data[MAXSIZE], wData[MAXSIZE]; //creates data arrays to sort
+	double  begin_time, end_time, cpu_time_used; //creates time variables to track how long each algorithm takes
 	string  ifilename, ofilename;
 
 	while (1) {
 
 		printmenu();
-		cin >> choice;
+		cin >> choice; //accepts user's choice
 
 		switch (choice) {
 
@@ -55,7 +55,7 @@ int main() {
 
 					begin_time = clock();   // start cpu timer
 
-					// Call your Sort function A here to sort the array 'wData''
+					// Call your Comb Sort here to sort the array 'wData'
 			        //  Note that 'wData' is of size 'sz' (see case 1).
 
 					combsort(wData, sz);
@@ -66,8 +66,9 @@ int main() {
 					cpu_time_used = (end_time - begin_time) / CLOCKS_PER_SEC;
 					cout << endl << "Comb Sort ran for " << cpu_time_used << " secs.";
 
-					ofilename = "lab5_combsort_out.txt";
+					ofilename = "lab5_combsort_out.txt"; 
 					writefile(wData, sz, ofilename);
+					//outputs and writes sorted algorithm into an output file
 
 					if (sz < 0)	 {
 						 cerr << endl << "ERROR: Output File could not be opened." <<endl;
@@ -75,6 +76,7 @@ int main() {
 						 return 0;
 					}
 					else cout << endl << "Output written to " << ofilename << endl;
+					//returns only if file could not be opened
 
 					break;
 
@@ -85,7 +87,7 @@ int main() {
 
                     begin_time = clock();   // start timer
 
-                    insertionSort(wData, sz); // Call Insertion Sort
+                    insertionSort(wData, sz); // Call Insertion Sort to sort wData
 
 					end_time = clock();		// end cpu timer
 
@@ -94,6 +96,7 @@ int main() {
 
 					ofilename = "lab5_insertionsort_out.txt";
 					writefile(wData, sz, ofilename);
+					//outputs and writes sorted algorithm into an output file
 
 					if (sz < 0)	 {
 						 cerr << endl << "ERROR: Output File could not be opened." <<endl;
@@ -101,6 +104,7 @@ int main() {
 						 return 0;
 					}
 					else cout << endl << "Output written to " << ofilename << endl;
+					//returns only if file could not be opened
 
 					break;
 
@@ -111,7 +115,7 @@ int main() {
 
                     begin_time = clock();   // start timer
 
-					selectionsort(wData, sz);
+					selectionsort(wData, sz); // Call Selection Sort to sort wData
 
 					end_time = clock();		// end cpu timer
 
@@ -120,6 +124,7 @@ int main() {
 
 					ofilename = "lab5_selectionsort_out.txt";
 					writefile(wData, sz, ofilename);
+					//outputs and writes sorted algorithm into an output file
 
 					if (sz < 0)	 {
 						 cerr << endl << "ERROR: Output File could not be opened." <<endl;
@@ -127,6 +132,7 @@ int main() {
 						 return 0;
 					}
 					else cout << endl << "Output written to " << ofilename << endl;
+					//returns only if file could not be opened
 
 					break;
 
@@ -139,7 +145,7 @@ int main() {
 
 					begin_time = clock();   // start cpu timer
 
-					// Call your Sort function D here to sort the array 'wData''
+					// Call your Merge Sport here to sort the array 'wData''
 			        //  Note that 'wData' is of size 'sz' (see case 1).
 
 					mergesort(wData, 0, sz-1);
@@ -151,6 +157,7 @@ int main() {
 
 					ofilename = "lab5_mergesort_out.txt";
 					writefile(wData, sz, ofilename);
+					//outputs and writes sorted algorithm into an output file
 
 					if (sz < 0)	 {
 						 cerr << endl << "ERROR: Output File could not be opened." <<endl;
@@ -158,6 +165,7 @@ int main() {
 						 return 0;
 					}
 					else cout << endl << "Output written to " << ofilename << endl;
+					//returns only if file could not be opened
 
 					break;
 
@@ -169,7 +177,7 @@ int main() {
 
                     begin_time = clock();   // start timer
 
-                    quickSort(wData, 0, sz - 1); // Call Quick Sort
+                    quickSort(wData, 0, sz - 1); // Call Quick Sort to sort wData
 
 					end_time = clock();		// end cpu timer
 
@@ -178,6 +186,7 @@ int main() {
 
 					ofilename = "lab5_quicksort_out.txt";
 					writefile(wData, sz, ofilename);
+					//outputs and writes to an output file
 
 					if (sz < 0)	 {
 						 cerr << endl << "ERROR: Output File could not be opened." <<endl;
@@ -185,6 +194,7 @@ int main() {
 						 return 0;
 					}
 					else cout << endl << "Output written to " << ofilename << endl;
+					//returns only if read file could not be opened
 
 					break;
 			case 7:
@@ -194,7 +204,7 @@ int main() {
 
                     begin_time = clock();   // start timer
 
-					shellsort(wData, sz);
+					shellsort(wData, sz); //Call Shell Sort to sort wData
 
 					end_time = clock();		// end cpu timer
 
@@ -203,6 +213,7 @@ int main() {
 
 					ofilename = "lab5_shellsort_out.txt";
 					writefile(wData, sz, ofilename);
+					//outputs and write sorted wData to an output file
 
 					if (sz < 0)	 {
 						 cerr << endl << "ERROR: Output File could not be opened." <<endl;
@@ -210,6 +221,7 @@ int main() {
 						 return 0;
 					}
 					else cout << endl << "Output written to " << ofilename << endl;
+					//returns only if file could not be opened
 
 					break;
 
@@ -219,13 +231,13 @@ int main() {
 
 					return 0;
 
-			default: // Error in selection
+			default: // Error in selection, user pickes a number that does not have a corresponding option
 
 					cout << endl << "Incorrect selection, try again from the menu below." << endl;
 
-		} // switch
+		}
 
-	} // while
+	}
 
 	return 0;
 }
